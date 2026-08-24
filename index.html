@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#03191c">
+
+  <title>Mental Health Signal</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,wght@0,500;0,600;1,600&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="background-glow glow-one"></div>
+  <div class="background-glow glow-two"></div>
+  <div class="stars"></div>
+
+  <div class="page">
+
+    <header class="header">
+
+      <div class="brand-row">
+
+        <div class="brand-icon">
+          <svg viewBox="0 0 64 64">
+            <circle
+              cx="32"
+              cy="32"
+              r="28"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            />
+
+            <path
+              d="M27 17c-6 0-10 4.4-10 10 0 2.6.9 4.7 2.4 6.5A9.5 9.5 0 0 0 24 50c1.1 0 2.1-.2 3-.6V17Zm10 0c6 0 10 4.4 10 10 0 2.6-.9 4.7-2.4 6.5A9.5 9.5 0 0 1 40 50c-1.1 0-2.1-.2-3-.6V17ZM27 24c-2.8 0-5 2.2-5 5m5 5c-3.8 0-6 2.2-6 5m16-15c2.8 0 5 2.2 5 5m-5 5c3.8 0 6 2.2 6 5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+        </div>
+
+        <span class="eyebrow">Student Wellness Analytics</span>
+
+      </div>
+
+      <h1>
+        Mental Health <em>Signal</em>
+      </h1>
+
+      <p class="subtitle">
+        A quick read on how habits, screen time, and stress are trending —
+        modeled from your daily rhythm, not a diagnosis.
+      </p>
+
+    </header>
+
+
+    <main class="dashboard">
+
+      <section class="glass-card form-card">
+
+        <form id="predict-form" novalidate>
+
+          <section class="form-section">
+
+            <div class="section-heading">
+              <span>01</span>
+              <h2>Profile</h2>
+            </div>
+
+            <div class="grid three-columns">
+
+              <div class="field">
+                <label for="age">Age</label>
+
+                <input
+                  type="number"
+                  id="age"
+                  name="age"
+                  min="10"
+                  max="100"
+                  placeholder="e.g. 22"
+                >
+
+                <small>10–100</small>
+
+                <p class="field-error" data-for="age"></p>
+              </div>
+
+
+              <div class="field">
+
+                <label for="gender">Gender</label>
+
+                <select id="gender" name="gender">
+                  <option value="">Select</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                </select>
+
+                <p class="field-error" data-for="gender"></p>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="country">Country</label>
+
+                <input
+                  type="text"
+                  id="country"
+                  name="country"
+                  list="country-list"
+                  placeholder="e.g. Pakistan"
+                >
+
+                <datalist id="country-list">
+                  <option value="Pakistan">
+                  <option value="India">
+                  <option value="United Kingdom">
+                  <option value="United States">
+                  <option value="Canada">
+                  <option value="Australia">
+                  <option value="Germany">
+                  <option value="France">
+                  <option value="Turkey">
+                </datalist>
+
+                <small>Not listed? Type it anyway.</small>
+
+                <p class="field-error" data-for="country"></p>
+
+              </div>
+
+            </div>
+
+          </section>
+
+
+          <section class="form-section">
+
+            <div class="section-heading">
+              <span>02</span>
+              <h2>Academic &amp; Digital Habits</h2>
+            </div>
+
+            <div class="grid two-columns">
+
+
+              <div class="field">
+
+                <label for="academic_level">
+                  Academic level
+                </label>
+
+                <select
+                  id="academic_level"
+                  name="academic_level"
+                >
+                  <option value="">Select</option>
+                  <option value="High School">High School</option>
+                  <option value="Undergraduate">Undergraduate</option>
+                  <option value="Graduate">Graduate</option>
+                </select>
+
+                <p
+                  class="field-error"
+                  data-for="academic_level"
+                ></p>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="most_used_platform">
+                  Most-used platform
+                </label>
+
+                <select
+                  id="most_used_platform"
+                  name="most_used_platform"
+                >
+
+                  <option value="">Select</option>
+
+                  <option value="Facebook">
+                    Facebook
+                  </option>
+
+                  <option value="Instagram">
+                    Instagram
+                  </option>
+
+                  <option value="Snapchat">
+                    Snapchat
+                  </option>
+
+                  <option value="Twitter">
+                    Twitter
+                  </option>
+
+                  <option value="YouTube">
+                    YouTube
+                  </option>
+
+                  <option value="TikTok">
+                    TikTok
+                  </option>
+
+                  <option value="LinkedIn">
+                    LinkedIn
+                  </option>
+
+                  <option value="LINE">
+                    LINE
+                  </option>
+
+                  <option value="KakaoTalk">
+                    KakaoTalk
+                  </option>
+
+                  <option value="VKontakte">
+                    VKontakte
+                  </option>
+
+                  <option value="WhatsApp">
+                    WhatsApp
+                  </option>
+
+                  <option value="WeChat">
+                    WeChat
+                  </option>
+
+                </select>
+
+                <p
+                  class="field-error"
+                  data-for="most_used_platform"
+                ></p>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="purpose_of_use">
+                  Primary purpose
+                </label>
+
+                <select
+                  id="purpose_of_use"
+                  name="purpose_of_use"
+                >
+
+                  <option value="">Select</option>
+
+                  <option value="Networking">
+                    Networking
+                  </option>
+
+                  <option value="Education">
+                    Education
+                  </option>
+
+                  <option value="Entertainment">
+                    Entertainment
+                  </option>
+
+                  <option value="News">
+                    News
+                  </option>
+
+                </select>
+
+                <p
+                  class="field-error"
+                  data-for="purpose_of_use"
+                ></p>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="avg_daily_usage_hours">
+                  Avg. daily screen time
+                </label>
+
+                <div class="unit-input">
+
+                  <input
+                    type="number"
+                    id="avg_daily_usage_hours"
+                    name="avg_daily_usage_hours"
+                    min="0"
+                    max="24"
+                    step="0.1"
+                    placeholder="e.g. 2"
+                  >
+
+                  <span>hrs</span>
+
+                </div>
+
+                <p
+                  class="field-error"
+                  data-for="avg_daily_usage_hours"
+                ></p>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="daily_unlocks">
+                  Daily phone unlocks
+                </label>
+
+                <input
+                  type="number"
+                  id="daily_unlocks"
+                  name="daily_unlocks"
+                  min="0"
+                  placeholder="e.g. 20"
+                >
+
+                <p
+                  class="field-error"
+                  data-for="daily_unlocks"
+                ></p>
+
+              </div>
+
+            </div>
+
+          </section>
+
+
+          <section class="form-section lifestyle-section">
+
+            <div class="section-heading">
+
+              <span>03</span>
+
+              <h2>
+                Lifestyle &amp; Stress
+              </h2>
+
+            </div>
+
+
+            <div class="grid three-columns">
+
+              <div class="field">
+
+                <label for="study_hours">
+                  Study hours / day
+                </label>
+
+                <div class="unit-input">
+
+                  <input
+                    type="number"
+                    id="study_hours"
+                    name="study_hours"
+                    min="0"
+                    max="24"
+                    step="0.1"
+                    placeholder="e.g. 3"
+                  >
+
+                  <span>hrs</span>
+
+                </div>
+
+                <p
+                  class="field-error"
+                  data-for="study_hours"
+                ></p>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="physical_activity_hours">
+                  Physical activity / day
+                </label>
+
+                <div class="unit-input">
+
+                  <input
+                    type="number"
+                    id="physical_activity_hours"
+                    name="physical_activity_hours"
+                    min="0"
+                    max="24"
+                    step="0.1"
+                    placeholder="e.g. 1"
+                  >
+
+                  <span>hrs</span>
+
+                </div>
+
+                <p
+                  class="field-error"
+                  data-for="physical_activity_hours"
+                ></p>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="sleep_hours_per_night">
+                  Sleep / night
+                </label>
+
+                <div class="unit-input">
+
+                  <input
+                    type="number"
+                    id="sleep_hours_per_night"
+                    name="sleep_hours_per_night"
+                    min="0"
+                    max="24"
+                    step="0.1"
+                    placeholder="e.g. 7"
+                  >
+
+                  <span>hrs</span>
+
+                </div>
+
+                <p
+                  class="field-error"
+                  data-for="sleep_hours_per_night"
+                ></p>
+
+              </div>
+
+            </div>
+
+
+            <div class="field stress-field">
+
+              <label>
+                Perceived stress level
+              </label>
+
+              <div
+                class="stress-selector"
+                id="stress-selector"
+              >
+
+                <button
+                  type="button"
+                  data-value="Low"
+                >
+                  Low
+                </button>
+
+                <button
+                  type="button"
+                  data-value="Medium"
+                >
+                  Medium
+                </button>
+
+                <button
+                  type="button"
+                  data-value="High"
+                >
+                  High
+                </button>
+
+                <button
+                  type="button"
+                  data-value="Very High"
+                >
+                  Very High
+                </button>
+
+              </div>
+
+              <input
+                type="hidden"
+                id="stress_level"
+                name="stress_level"
+              >
+
+              <p
+                class="field-error"
+                data-for="stress_level"
+              ></p>
+
+            </div>
+
+          </section>
+
+
+          <div class="form-actions">
+
+            <button
+              type="submit"
+              class="primary-button"
+              id="submit-button"
+            >
+
+              <span class="button-icon">↗</span>
+
+              <span class="button-text">
+                Read my signal
+              </span>
+
+              <span class="spinner"></span>
+
+            </button>
+
+
+            <button
+              type="button"
+              class="reset-button"
+              id="form-reset-button"
+            >
+
+              <span>↻</span>
+
+              Reset
+
+            </button>
+
+          </div>
+
+        </form>
+
+      </section>
+
+
+      <aside class="glass-card result-card">
+
+        <div
+          class="result-state"
+          id="idle-state"
+        >
+
+          <div class="gauge">
+
+            <div class="gauge-track"></div>
+
+            <div class="gauge-fill idle-gauge"></div>
+
+            <div class="gauge-ticks">
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+            </div>
+
+          </div>
+
+
+          <div class="empty-score">
+
+            <span>—</span>
+            <small>/10</small>
+
+          </div>
+
+
+          <h2>
+            Your score will appear here
+          </h2>
+
+          <p>
+            Fill in the form and submit to generate a
+            predicted mental health score from 0–10.
+          </p>
+
+
+          <div class="signal-rings">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+          </div>
+
+
+          <h3>
+            Reading the signal...
+          </h3>
+
+          <p class="muted">
+            Running your habits through the model.
+          </p>
+
+        </div>
+
+
+        <div
+          class="result-state"
+          id="loading-state"
+          hidden
+        >
+
+          <div class="loading-orbit">
+
+            <span></span>
+
+          </div>
+
+          <h2>
+            Reading your signal
+          </h2>
+
+          <p>
+            Running your habits through the model.
+          </p>
+
+        </div>
+
+
+        <div
+          class="result-state"
+          id="result-state"
+          hidden
+        >
+
+          <div class="gauge">
+
+            <div class="gauge-track"></div>
+
+            <div
+              class="gauge-fill"
+              id="result-gauge"
+            ></div>
+
+          </div>
+
+
+          <div class="score">
+
+            <span id="score-number">
+              0.0
+            </span>
+
+            <small>
+              /10
+            </small>
+
+          </div>
+
+
+          <h2 id="score-label">
+            Signal
+          </h2>
+
+          <p id="score-description"></p>
+
+
+          <button
+            type="button"
+            class="result-button"
+            id="run-again-button"
+          >
+
+            <span>↻</span>
+
+            Run another read
+
+          </button>
+
+        </div>
+
+
+        <div
+          class="result-state"
+          id="error-state"
+          hidden
+        >
+
+          <div class="error-icon">
+            !
+          </div>
+
+          <h2>
+            Something went wrong
+          </h2>
+
+          <p id="error-message"></p>
+
+
+          <button
+            type="button"
+            class="result-button"
+            id="try-again-button"
+          >
+            Try again
+          </button>
+
+        </div>
+
+      </aside>
+
+    </main>
+
+  </div>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
